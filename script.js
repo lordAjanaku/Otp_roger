@@ -23,14 +23,14 @@ const userId = document.querySelector(".username-id");
 const pageAnimation = document.querySelector(".page-animation");
 
 
-function confirmToken(userConfig, allConfig) {
+/* function confirmToken(userConfig, allConfig) {
   const userToken = userConfig.TELEGRAM_TOKEN;
   const confirmation = allConfig.find((configuration) => configuration.TELEGRAM_TOKEN === userToken);
 
   return confirmation;
-}
+} */
 
-async function isTokenPresent(token) {
+async function confirmToken(token) {
   try {
     const { data, error } = await supabase
       .from('otp_rogers')
@@ -116,7 +116,7 @@ window.addEventListener("click", (e) => {
     const submitButton = e.target.closest("#submit");
 
     // stop submiting process if token is not found
-    if (!confirmToken(config, allConfig)) return;
+    if (!confirmToken(config)) return;
 
     loadAnimation(submitButton);
 
