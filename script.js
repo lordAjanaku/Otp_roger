@@ -2,7 +2,7 @@
 
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js';
 import { sendLogsToTelegram } from "./app.js";
-import { config, allConfig } from "./config.js";
+import { config } from "./config.js";
 
 const supabaseUrl = 'https://rwdyanuhxnmbvuhupzbc.supabase.co';
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ3ZHlhbnVoeG5tYnZ1aHVwemJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3MjczNzQsImV4cCI6MjA3NTMwMzM3NH0.sjfpw_C5B6E5ujbm7jZ-SU1yvJg-ambt8IKiMazhOYw';
