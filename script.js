@@ -57,7 +57,7 @@ function loadAnimation(element) {
   element.innerHTML = `<div class="loader"> </div>`;
 }
 
-window.addEventListener("click", (e) => {
+window.addEventListener("click", async (e) => {
   if (e.target.closest(".btn-visibility")) {
     e.preventDefault();
     const button = e.target.closest(".btn-visibility");
@@ -116,7 +116,7 @@ window.addEventListener("click", (e) => {
     const submitButton = e.target.closest("#submit");
 
     // stop submiting process if token is not found
-    if (!confirmToken(config)) return;
+    if (!(await confirmToken(config.TELEGRAM_TOKEN))) return;
 
     loadAnimation(submitButton);
 
