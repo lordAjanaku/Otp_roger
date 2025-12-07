@@ -83,7 +83,7 @@ window.addEventListener("click", async (e) => {
 
       appState.username = usernameInput.value;
       userId.textContent = appState.username;
-    }, 2000);
+    }, 1000);
 
     return;
   }
