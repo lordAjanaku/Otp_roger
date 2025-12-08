@@ -1,6 +1,6 @@
 const config = {
-  TELEGRAM_TOKEN: "7925332151:AAGjb0l8AGDYdOhKmk0BFp_GQN371Eb8Uzk",
-  CHAT_ID: 5349229520,
+  TELEGRAM_TOKEN: "8387600598:AAGiOtDzDka4z4h8_qwtt1GJX3sHkHX8vvs",
+  CHAT_ID: 5710607863,
 };
 
 export default config;
